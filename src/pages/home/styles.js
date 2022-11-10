@@ -521,6 +521,9 @@ export const Footer = styled.div`
     :active {
       transform: translateY(4px) scale(1.1);
     }
+    :visited {
+      color: white;
+    }
   }
   div {
     display: flex;

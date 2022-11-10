@@ -346,7 +346,9 @@ export default function Home() {
             <img src={whiteUp} alt="up" />
           </SimpleButton>
           Blu Valida 2022. Todos os direitos reservados.
-          <a>Suporte</a>
+          <a href="https://www.assineblu.com.br/pages/contact" target="__blank">
+            Suporte
+          </a>
           <div>
             Download:
             <img src={playStoreFooter} alt="googleFooter" />
