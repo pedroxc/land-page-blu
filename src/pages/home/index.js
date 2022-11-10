@@ -24,6 +24,12 @@ import numberThree from "../../assets/3.png";
 import art1 from "../../assets/art1.png";
 import art2 from "../../assets/art2.png";
 import art3 from "../../assets/art3.png";
+import quote1 from "../../assets/quote1.png";
+import quote2 from "../../assets/quote2.png";
+import user from "../../assets/user.png";
+import whiteUp from "../../assets/upWhite.svg";
+import playStoreFooter from "../../assets/playstoreFooter.png";
+import appleFooter from "../../assets/appleStoreFooter.png";
 import {
   Root,
   Container,
@@ -42,6 +48,7 @@ import {
   Image,
   SimpleButton,
   SecondPage,
+  Div,
   Section,
   TextSecondPage,
   LegendaSecondPage,
@@ -50,6 +57,7 @@ import {
   FooterSecondPage,
   ThirdPage,
   Third,
+  Warpper,
   FooterThirdPage,
   ForthPage,
   Forth,
@@ -57,6 +65,14 @@ import {
   Card,
   CarroselWarpper,
   Art,
+  FooterForthPage,
+  FinalPage,
+  BigText,
+  Coments,
+  Quotation,
+  Coment,
+  Avatar,
+  Footer,
 } from "./styles";
 
 export default function Home() {
@@ -65,6 +81,8 @@ export default function Home() {
   const ref = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
+  const ref4 = useRef(null);
+  const ref5 = useRef(null);
 
   return (
     <Root>
@@ -180,35 +198,54 @@ export default function Home() {
         </Third>
         <FooterThirdPage>
           <SimpleButton
-            style={{ alignSelf: "flex-end" }}
+            className="upbtn2"
+            style={{ alignSelf: "flex-start" }}
             onClick={() => ref.current?.scrollIntoView({ behavior: "smooth" })}
           >
             <img src={upBlue} alt="up" />
           </SimpleButton>
-          <div style={{ backgroundColor: "#A2F9E8" }}>
+          <Div style={{ backgroundColor: "#A2F9E8" }}>
             CONTROLE DE PAGAMENTOS
-          </div>
-          <div style={{ backgroundColor: "#90ADF4" }}>
+          </Div>
+          <Div style={{ backgroundColor: "#90ADF4" }}>
             FACILIDADE COM GRANDES REMESSAS
-          </div>
-          <div style={{ backgroundColor: "#FFE000" }}>
+          </Div>
+          <Div style={{ backgroundColor: "#FFE000" }}>
             OTIMIZAÇÃO DE RECURSOS
-          </div>
-          <div style={{ backgroundColor: "#F9A5CD" }}>LISTA DE CLIENTES</div>
-          <div style={{ backgroundColor: "#90ADF4" }}>...MUITO MAIS!</div>
-          <SimpleButton
-            style={{ alignSelf: "flex-end" }}
-            onClick={() => ref.current?.scrollIntoView({ behavior: "smooth" })}
-          >
-            <img src={downBlue} alt="down" />
-          </SimpleButton>
+          </Div>
+          <Div style={{ backgroundColor: "#F9A5CD" }}>LISTA DE CLIENTES</Div>
+          <Div style={{ backgroundColor: "#90ADF4" }}>...MUITO MAIS!</Div>
+          <Warpper>
+            <SimpleButton
+              className="upbtn3"
+              style={{ alignSelf: "flex-start" }}
+              onClick={() =>
+                ref.current?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              <img src={upBlue} alt="up" />
+            </SimpleButton>
+            <SimpleButton
+              style={{ alignSelf: "flex-end" }}
+              onClick={() =>
+                ref4.current?.scrollIntoView({ behavior: "smooth" })
+              }
+            >
+              <img src={downBlue} alt="down" />
+            </SimpleButton>
+          </Warpper>
         </FooterThirdPage>
       </ThirdPage>
-      <ForthPage>
+      <ForthPage ref={ref4}>
         <Forth>
           <ForthPageText>Como funciona</ForthPageText>
           <CarroselWarpper>
-            <Carousel showArrows={true} showThumbs={false} emulateTouch>
+            <Carousel
+              showArrows={true}
+              showStatus={false}
+              showThumbs={false}
+              emulateTouch
+            >
               <Card>
                 <img src={numberOne} alt="1" />
                 <p>
@@ -216,7 +253,7 @@ export default function Home() {
                   (Exemplo: ”Internet”), envia seus boletos em lote para seus
                   clientes.
                 </p>
-                <Art src={art1} alt="computareos" className="art" />
+                <Art src={art1} alt="computareos" />
               </Card>
               <Card>
                 <img src={numberTwo} alt="1" />
@@ -226,7 +263,7 @@ export default function Home() {
                   categoria correspondente, no painel inicial da conta de
                   cliente.
                 </p>
-                <Art src={art2} alt="computareos" className="art" />
+                <Art src={art2} alt="computareos" />
               </Card>
               <Card>
                 <img src={numberThree} alt="1" />
@@ -235,12 +272,88 @@ export default function Home() {
                   operação. A atualização de status é uma comunicação entre a
                   conta empresa parceira e conta de cliente.
                 </p>
-                <Art src={art3} alt="computareos" className="art" />
+                <Art src={art3} alt="computareos" />
               </Card>
             </Carousel>
           </CarroselWarpper>
         </Forth>
+        <FooterForthPage>
+          <SimpleButton
+            style={{ alignSelf: "flex-start" }}
+            onClick={() => ref3.current?.scrollIntoView({ behavior: "smooth" })}
+          >
+            <img src={upBlue} alt="up" />
+          </SimpleButton>
+          <div>deslize para ver! 👉</div>
+          <SimpleButton
+            style={{ alignSelf: "flex-end" }}
+            onClick={() => ref5.current?.scrollIntoView({ behavior: "smooth" })}
+          >
+            <img src={downBlue} alt="down" />
+          </SimpleButton>
+        </FooterForthPage>
       </ForthPage>
+      <FinalPage ref={ref5}>
+        <BigText>Por que utilizar Blu valida?</BigText>
+        <Coments>
+          <Quotation src={quote1} alt="aspas" />
+          <Coment>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Perspiciatis vitae voluptas ex deserunt, cum neque molestiae. Sed
+              quaerat maxime, laborum id asperiores, hic beatae placeat dicta,
+              neque cumque totam dignissimos.
+            </p>
+            <Avatar>
+              <img src={user} alt="user" />
+              <p>Nome</p>
+              <span>Função</span>
+            </Avatar>
+          </Coment>
+          <Coment>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Perspiciatis vitae voluptas ex deserunt, cum neque molestiae. Sed
+              quaerat maxime, laborum id asperiores, hic beatae placeat dicta,
+              neque cumque totam dignissimos.
+            </p>
+            <Avatar>
+              <img src={user} alt="user" />
+              <p>Nome</p>
+              <span>Função</span>
+            </Avatar>
+          </Coment>
+          <Coment>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Perspiciatis vitae voluptas ex deserunt, cum neque molestiae. Sed
+              quaerat maxime, laborum id asperiores, hic beatae placeat dicta,
+              neque cumque totam dignissimos.
+            </p>
+            <Avatar>
+              <img src={user} alt="user" />
+              <p>Nome</p>
+              <span>Função</span>
+            </Avatar>
+          </Coment>
+          <Quotation src={quote2} alt="aspas" />
+        </Coments>
+        <Footer>
+          <SimpleButton
+            style={{ alignSelf: "flex-start" }}
+            onClick={() => ref4.current?.scrollIntoView({ behavior: "smooth" })}
+          >
+            <img src={whiteUp} alt="up" />
+          </SimpleButton>
+          Blu Valida 2022. Todos os direitos reservados.
+          <a>Suporte</a>
+          <div>
+            Download:
+            <img src={playStoreFooter} alt="googleFooter" />
+            <img src={appleFooter} alt="appleFooter" />
+          </div>
+        </Footer>
+      </FinalPage>
     </Root>
   );
 }

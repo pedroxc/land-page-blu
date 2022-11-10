@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const Root = styled.div`
-  width: 100vw;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
   @media (max-width: 1000px) {
@@ -11,8 +11,10 @@ export const Header = styled.div`
   background: linear-gradient(180deg, #253c8c, #253c8c);
   display: flex;
   justify-content: space-between;
-  width: 100vw;
+  max-width: 100vw;
   height: 80px;
+  padding-left: 250px;
+  padding-right: 50px;
   @media (max-width: 1000px) {
     padding-left: 0;
   }
@@ -22,7 +24,6 @@ export const Header = styled.div`
   }
 `;
 export const HeaderButtonsdiv = styled.div`
-  margin-right: 270px;
   display: flex;
   gap: 60px;
   @media (max-width: 1000px) {
@@ -72,6 +73,7 @@ export const View = styled.div`
 export const Image = styled.div`
   min-width: 50vw;
   height: 50vh;
+  background-color: red;
   @media (max-width: 1000px) {
     width: 100vw;
   }
@@ -196,6 +198,19 @@ export const Banner = styled.div`
 export const SimpleButton = styled.button`
   background: none;
   border: none;
+  &.upbtn2 {
+    display: inline;
+    @media (max-width: 1000px) {
+      display: none;
+    }
+  }
+
+  &.upbtn3 {
+    display: none;
+    @media (max-width: 1000px) {
+      display: inline;
+    }
+  }
   :hover {
     transform: scale(1.1);
   }
@@ -204,17 +219,23 @@ export const SimpleButton = styled.button`
   }
 `;
 export const SecondPage = styled.div`
-  width: 100vw;
+  max-width: 100vw;
   height: 100vh;
   background-color: white;
   display: flex;
   flex-direction: column;
+  @media (max-width: 1000px) {
+    height: fit-content;
+  }
 `;
 export const Section = styled.div`
   width: 50vw;
   max-height: 90vh;
   &.image {
     margin-top: 280px;
+    @media (max-width: 1000px) {
+      margin: 25px 0;
+    }
   }
   &.image_2 {
     margin-top: 280px;
@@ -228,7 +249,7 @@ export const Section = styled.div`
     flex-direction: column;
     width: 100vw;
     align-items: center;
-    height: auto;
+    height: fit-content;
 
     img {
       width: 90vw;
@@ -286,16 +307,26 @@ export const FooterSecondPage = styled.div`
   }
 `;
 export const ThirdPage = styled.div`
-  width: 100vw;
+  max-width: 100vw;
   height: 100vh;
   background: #e9effd;
   display: flex;
   flex-direction: column;
+  @media (max-width: 1000px) {
+    height: fit-content;
+  }
 `;
 export const Third = styled.div`
   display: flex;
   @media (max-width: 1000px) {
     flex-direction: column;
+  }
+`;
+export const Warpper = styled.div`
+  @media (max-width: 1000px) {
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
   }
 `;
 export const FooterThirdPage = styled.div`
@@ -304,34 +335,48 @@ export const FooterThirdPage = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 160px;
-  div {
-    border: 1px solid black;
-    padding: 10px;
-    border-radius: 18px;
-  }
+
   @media (max-width: 1000px) {
     flex-direction: column;
+    margin-top: 20px;
   }
 `;
+export const Div = styled.div`
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 18px;
+`;
+
 export const ForthPage = styled.div`
-  width: 100vw;
+  max-width: 100vw;
   height: 100vh;
   background: #f5f5f5;
   display: flex;
   flex-direction: column;
+  @media (max-width: 1000px) {
+    height: fit-content;
+  }
 `;
 export const Forth = styled.div`
   height: 90vh;
-  width: 100vw;
+  max-width: 100vw;
+  @media (max-width: 1000px) {
+    height: fit-content;
+  }
 `;
 export const ForthPageText = styled.div`
-  font-family: Ubuntu;
   font-size: 56px;
   font-weight: 500;
   margin-left: 240px;
   margin-top: 190px;
+  @media (max-width: 1000px) {
+    margin: 15px 0;
+  }
 `;
-export const CarroselWarpper = styled.div``;
+export const CarroselWarpper = styled.div`
+  max-width: 100vw;
+  margin: 45px 0;
+`;
 export const Card = styled.div`
   border: 4px solid #1d2b4e;
   box-shadow: 40px 40px #1d2b4e;
@@ -359,13 +404,137 @@ export const Card = styled.div`
     }
     img {
       margin: 5px;
-      height: 90px;
-      width: 36px;
+      height: 60px;
+      width: 334px;
     }
   }
 `;
 
 export const Art = styled.img`
-  width: 340px;
-  height: 340px;
+  min-width: 340px;
+  min-height: 340px;
+  @media (max-width: 1000px) {
+    min-width: 80px;
+    min-height: 80px;
+  }
+`;
+export const FooterForthPage = styled.div`
+  margin-top: 10px;
+  z-index: 10;
+  display: flex;
+  gap: 24px;
+  width: 95vw;
+  justify-content: center;
+  gap: 600px;
+  @media (max-width: 1000px) {
+    gap: 20px;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 259px;
+    border: 1px solid #253c8c;
+    font-size: 24px;
+    font-weight: 400;
+    color: #253c8c;
+    border-radius: 18px;
+  }
+`;
+export const FinalPage = styled.div`
+  max-width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #f5f5f5 60%, #1d2b4e 40%);
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 1000px) {
+    height: fit-content;
+  }
+`;
+export const BigText = styled.div`
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 64px;
+  margin-top: 218px;
+  margin-left: 241px;
+`;
+export const Coments = styled.div`
+  margin: 120px auto;
+  display: flex;
+  gap: 31px;
+`;
+export const Quotation = styled.img`
+  height: 120px;
+  width: 122px;
+`;
+
+export const Coment = styled.div`
+  background-color: #ffff;
+  height: 360px;
+  width: 317px;
+  border-radius: 8px;
+  padding: 21px 26px 21px 26px;
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 36px;
+    text-align: justify;
+  }
+`;
+export const Avatar = styled.div`
+  margin-top: 24px;
+
+  img {
+    height: 64px;
+    width: 64px;
+  }
+  P {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 27.58px;
+    color: #253c8c;
+    margin-bottom: 10px;
+  }
+  span {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 27.58px;
+    color: #253c8c;
+  }
+`;
+export const Footer = styled.div`
+  max-width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+
+  a {
+    text-decoration: underline;
+    cursor: pointer;
+    :hover {
+      transform: scale(1.1);
+    }
+    :active {
+      transform: translateY(4px) scale(1.1);
+    }
+  }
+  div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    img {
+      cursor: pointer;
+      :hover {
+        transform: scale(1.1);
+      }
+      :active {
+        transform: translateY(4px) scale(1.1);
+      }
+    }
+  }
 `;
